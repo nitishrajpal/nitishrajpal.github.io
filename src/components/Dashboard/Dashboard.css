@@ -1,0 +1,12 @@
+.dashboardContainer {
+    border: 1px solid black;
+    margin: 50px;
+}
+
+#deleteSlip {
+    margin-right: 5px;
+}
+
+#checkoutSlip {
+    margin-left: 5px;
+}

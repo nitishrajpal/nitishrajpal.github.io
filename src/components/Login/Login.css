@@ -1,0 +1,9 @@
+.formContainer {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 50px;
+}
+
+#switchAuth {
+    margin-top: 5px;
+}
