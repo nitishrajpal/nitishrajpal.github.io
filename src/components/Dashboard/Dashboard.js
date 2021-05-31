@@ -59,6 +59,7 @@ class Dashboard extends Component  {
         let updatedParkingSlip = null;
         this.state.parkingSlips.map(slip => {
             if(slip.id === id){
+                console.log(this.state);
                 if(slip.outTime === ''){
                 updatedParkingSlip = {...slip, outTime: nowTime };
                 axios.put(`https://parking-system-a0abc-default-rtdb.firebaseio.com/parkingSlip/${id}.json`, updatedParkingSlip)
@@ -76,10 +77,13 @@ class Dashboard extends Component  {
             ...state,
             parkingSlips: state.parkingSlips.map( slip => {
                 if( slip.id === id){
-                    return {
-                        ...slip,
-                        outTime: nowTime
+                    if( slip.outTime === '' ){
+                        return {
+                            ...slip,
+                            outTime: nowTime
+                        }
                     }
+                    return slip;
                 }
                 else{
                     return slip;
